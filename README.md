@@ -1,6 +1,6 @@
 # Web Crawler
 
-## Overview
+## Description
 
 This Web Crawler is a Node.js application designed to crawl websites starting from a given base URL. It navigates through the website, recursively visiting all linked pages within the same domain. The crawler counts the number of times each page is linked within the domain, providing insights into the website's structure and link distribution.
 
