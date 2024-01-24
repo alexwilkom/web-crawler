@@ -1,14 +1,18 @@
-const {crawlPage} = require('./crawl')
+const { crawlPage } = require("./crawl");
+const { printReport } = require("./report");
 
 async function init() {
   const args = process.argv.slice(2);
+  const baseURL = args[0];
+
   if (args.length === 1) {
-    const baseURL = args[0];
-    console.log(`Starting crawling at ${baseURL}...`)
-    await crawlPage(baseURL);
+    console.log(`Starting crawling at ${baseURL}...`);
+    const pages = await crawlPage(baseURL, baseURL, {});
+    printReport(pages);
   } else {
-    console.error("Please, provide a URL to crawl.");
+    console.log("Please, provide a URL to crawl.");
   }
+  
 }
 
 init();
